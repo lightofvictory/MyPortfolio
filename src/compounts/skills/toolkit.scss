@@ -1,0 +1,77 @@
+.toolkit {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 100% 0%, #5a142b66, transparent 45%), radial-gradient(ellipse at 0% 0%, #4c192c44, transparent 40%), #110f14;
+  border-block: 1px solid #ffffff0b;
+  padding-block: 60px 35px;
+  .container { width: min(1120px, calc(100% - 48px)); }
+  .toolkit-heading { position: relative; z-index: 2; align-items: flex-start; margin-bottom: 0; pointer-events: none; }
+  .toolkit-heading .eyebrow { font-size: 10px; color: #c2acb8; letter-spacing: 1.7px; margin-bottom: 16px; gap: 5px; }
+  .toolkit-heading .eyebrow>span { color: #ff408b; position: relative; }
+  .toolkit-heading .eyebrow>span::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 14px; height: 1px; background: #ff408b; }
+  .toolkit-heading h2 { font-size: 36px; line-height: 1.12; letter-spacing: -1.2px; }
+  .toolkit-heading h2 span { color: #ff408b; }
+  .toolkit-heading>p { border-left: 2px solid #f72c82; padding-left: 14px; font-size: 12px; line-height: 1.7; color: #bcaab6; margin-top: 34px; }
+}
+.toolkit-interactive { position: relative; margin-top: 24px; }
+.toolkit-arc { height: 225px; position: relative; perspective: 1000px; }
+.toolkit-orbital { position: absolute; left: 50%; top: 30px; width: 105%; height: 470px; transform: translateX(-50%); border: 1px solid #c3265d25; border-radius: 50%; pointer-events: none; }
+.toolkit-orbital.orbit-two { top: 55px; width: 120%; height: 510px; border-color: #ed28551b; }
+.toolkit-orbital.orbit-three { top: 80px; width: 135%; height: 540px; border-color: #ed285518; }
+.toolkit-center-beacon { position: absolute; left: 50%; top: 17px; height: 52px; width: 1px; background: repeating-linear-gradient(to bottom,#ff7bb9 0 2px,transparent 2px 7px); filter: drop-shadow(0 0 4px #ff408b); }
+.toolkit-center-beacon::before { content: ''; position: absolute; top: 0; left: -4px; width: 9px; height: 9px; border: 2px solid #ffd9ec; background: #d71362; border-radius: 50%; box-shadow: 0 0 12px #ff217a; }
+.toolkit-tech { position: absolute; left: calc(50% - 39px); top: 79px; width: 78px; height: 78px; display: grid; place-items: center; padding: 12px; border-radius: 13px; border: 1px solid #a8517960; background: linear-gradient(125deg,#4d2a3d,#1c1922 60%,#321324); box-shadow: inset 0 1px 5px #ffffff08,0 5px 15px #0003; color: white; transition: border-color 2s, box-shadow 2s; }
+.toolkit-tech.is-active { border-color: #ffb5d4; background: radial-gradient(ellipse at center,#1e1320,#1a1019); box-shadow: 0 0 0 1px #ff3186,0 0 12px #ff1679aa,0 0 30px #ff167940,inset 0 0 16px #ed28551a; }
+.toolkit .toolkit-tech .technology-logo { width: 52px; height: 52px; filter: drop-shadow(0 0 5px #ffffff15); }
+.toolkit .toolkit-tech .technology-logo img { width: 52px; height: 52px; object-fit: contain; }
+.toolkit .technology-logo-fallback { font-size: 25px; color: #f5d0e2; }
+.toolkit-arrow { position: absolute; z-index: 30; top: 173px; width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid #ff70af; border-radius: 50%; color: #ff398c; background: #21131fe6; box-shadow: 0 0 15px #f42b8130; }
+.toolkit-arrow:hover { background: #522139; color: #ffe4f2; }
+.toolkit-arrow.previous { left: 0; }.toolkit-arrow.next { right: 0; }
+.toolkit-particles { position: absolute; inset: 20px 0 0; pointer-events: none; }
+.toolkit-particles i { position: absolute; width: 2px; height: 2px; border-radius: 50%; background: #ff90bf; box-shadow: 0 0 5px #ff207b; animation: toolkit-spark 4s ease-in-out infinite; }
+.toolkit-active-copy { position: relative; z-index: 2; text-align: center; min-height: 132px; padding-top: 0; pointer-events: none; }
+.toolkit-category { display: inline-block; padding: 1px 12px; color: #ffe5ef; border-radius: 8px; border: 1px solid #e7347d80; background: linear-gradient(#a71d53,#571332); font-size: 11px; line-height: 1.6; }
+.toolkit-active-copy h3 { font-size: 27px; line-height: 1.25; margin: 13px 0 6px; color: #f7f2f5; letter-spacing: -.6px; }
+.toolkit-active-copy p { max-width: 340px; margin: auto; color: #b9abb8; font-size: 11px; line-height: 1.6; min-height: 36px; }
+.toolkit-info-stage { position: relative; height: 295px; perspective: 1200px; margin-top: 5px; }
+.toolkit-info-card { position: absolute; top: 0; left: 50%; margin-left: calc(min(704px, 65%) / -2); width: min(704px,65%); height: 280px; display: grid; grid-template-columns: 1.12fr 1fr; gap: 10px; padding: 26px; border: 1px solid #c92d6c80; border-radius: 15px; background: radial-gradient(ellipse at 0% 0%,#87264950,transparent 45%),linear-gradient(120deg,#241a27,#15141c 60%,#291422); box-shadow: 0 0 15px #ed285518,inset 0 1px 0 #ffffff08; transform-style: preserve-3d; }
+.toolkit-info-card.is-active { border-color: #fd78b7; box-shadow: -5px -3px 18px #f32d8230,inset 0 0 20px #ed28550a; }
+.toolkit-info-heading { display: flex; align-items: center; gap: 18px; margin-bottom: 13px; }
+.toolkit-info-logo { display: grid; place-items: center; width: 59px; height: 59px; flex-shrink: 0; padding: 9px; border-radius: 10px; border: 1px solid #ff71b18c; background: #221520; box-shadow: inset 0 0 10px #ed28551a; }
+.toolkit .toolkit-info-logo .technology-logo,.toolkit .toolkit-info-logo img { width: 39px; height: 39px; }
+.toolkit-info-category { font: 8px/1.5 monospace; letter-spacing: 1.7px; text-transform: uppercase; color: #ff4b99; }
+.toolkit-info-heading h3 { font-size: 24px; letter-spacing: -.6px; line-height: 1.2; color: #faf3f7; margin-top: 5px; }
+.toolkit-info-text>p { font-size: 10px; line-height: 1.7; color: #c5b9c6; margin-bottom: 17px; }
+.toolkit-feature-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.toolkit-feature-tags span { display: inline-block; font-size: 8px; line-height: 1.5; padding: 6px 11px; border: 1px solid #ac3a7070; border-radius: 8px; color: #f1e2ec; background: linear-gradient(#56253e40,#14131b); box-shadow: inset 0 1px 5px #ed285512; }
+.toolkit-illustration { position: relative; min-width: 0; height: 100%; perspective: 700px; align-self: center; }
+.toolkit-art-window { position: absolute; width: 66%; height: 66%; left: 17%; top: 20%; border: 1px solid #f84b9890; border-radius: 8px; transform: rotateY(-25deg) rotateZ(-12deg) skewY(15deg); background: linear-gradient(140deg,#8f26533d,#17151f 55%); box-shadow: -5px 0 15px #ed285510; }
+.toolkit-art-window.back { translate: 23px -23px; opacity: .45; }
+.toolkit-art-window.middle { translate: 11px -11px; opacity: .7; }
+.toolkit-art-window.front { display: grid; place-items: center; background: linear-gradient(130deg,#351b30,#16151f); }
+.toolkit .toolkit-art-window .technology-logo,.toolkit .toolkit-art-window img { width: 65px; height: 65px; }
+.toolkit-art-dots { position: absolute; top: 9px; left: 9px; display: flex; gap: 4px; }.toolkit-art-dots i { width: 3px; height: 3px; background: #e44e8a; border-radius: 50%; }
+.toolkit-art-orbit { position: absolute; width: 105%; height: 65%; left: -3%; top: 20%; border: 1px solid #ed285549; border-radius: 50%; transform: rotate(22deg); }.toolkit-art-orbit.second { transform: rotate(-28deg); opacity: .55; }
+.toolkit-art-orbit::after { content: ''; position: absolute; width: 4px; height: 4px; top: 20%; left: 12%; background: #ffb0d0; box-shadow: 0 0 9px #ff227f; border-radius: 50%; }
+.toolkit-art-tile { position: absolute; display: grid; place-items: center; width: 40px; height: 46px; border: 1px solid #db407d70; color: #f24b9b; background: linear-gradient(120deg,#72244890,#211524); border-radius: 7px; transform: skewY(18deg); box-shadow: 0 0 15px #ed285518; }
+.toolkit-art-tile.code { left: 2%; top: 47%; }.toolkit-art-tile.layers { right: 12%; top: 0; }.toolkit-art-tile.settings { right: -1%; bottom: 17%; }
+.toolkit-autoplay { position: relative; z-index: 30; display: flex; gap: 6px; align-items: center; margin: 10px auto 0; border: 0; background: transparent; padding: 6px 10px; color: #ac8e9e; font-size: 9px; }
+.toolkit-autoplay:hover { color: #ff90bf; }
+.toolkit-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@keyframes toolkit-spark { 0%,100% { opacity: .2; } 50% { opacity: .85; } }
+@media(max-width:900px){
+  .toolkit .toolkit-heading h2 { font-size: 30px; }.toolkit .toolkit-heading>p { font-size: 10px; }
+  .toolkit-interactive { margin-top: 24px; }.toolkit-info-card { padding: 19px; gap: 5px; height: 300px; }.toolkit-info-stage { height: 315px; }
+  .toolkit-info-heading { gap: 10px; }.toolkit-info-logo { width: 47px; height: 47px; }.toolkit-info-category { font-size: 7px; letter-spacing: 1px; }.toolkit-info-heading h3 { font-size: 21px; }.toolkit-info-text>p { font-size: 9px; }.toolkit-feature-tags { gap: 5px; }.toolkit-feature-tags span { padding: 5px 7px; font-size: 7px; }
+}
+@media(max-width:640px){
+  .toolkit { padding-block: 45px 25px; }.toolkit .container { width: calc(100% - 28px); }.toolkit .toolkit-heading { gap: 14px; flex-direction: column; }.toolkit .toolkit-heading h2 { font-size: 29px; }.toolkit .toolkit-heading>p { margin: 0; font-size: 11px; }
+  .toolkit-interactive { margin-top: 28px; }.toolkit-arc { height: 210px; }.toolkit-tech { top: 70px; width: 65px; height: 65px; left: calc(50% - 32.5px); padding: 10px; }.toolkit .toolkit-tech .technology-logo,.toolkit .toolkit-tech img { width: 42px; height: 42px; }
+  .toolkit-arrow { top: 165px; width: 33px; height: 33px; }.toolkit-center-beacon { top: 20px; height: 40px; }.toolkit-orbital { width: 150%; }.toolkit-orbital.orbit-two { width: 180%; }.toolkit-orbital.orbit-three { width: 210%; }
+  .toolkit-active-copy { min-height: 130px; }.toolkit-active-copy h3 { font-size: 25px; }.toolkit-active-copy p { max-width: 275px; font-size: 10px; }
+  .toolkit-info-card { width: calc(100% - 32px); margin-left: calc((100% - 32px) / -2); height: 405px; padding: 20px; grid-template-columns: 1fr; grid-template-rows: auto 150px; gap: 0; }.toolkit-info-stage { height: 420px; }
+  .toolkit-info-text>p { font-size: 11px; line-height: 1.65; margin-bottom: 12px; }.toolkit-info-category { font-size: 8px; }.toolkit-info-heading h3 { font-size: 23px; }.toolkit-feature-tags span { font-size: 8px; padding: 5px 8px; }.toolkit-illustration { width: 220px; height: 145px; justify-self: center; }.toolkit-art-window { height: 80%; top: 12%; }.toolkit-art-tile { width: 32px; height: 36px; }.toolkit-art-tile svg { width: 18px; }.toolkit .toolkit-art-window .technology-logo,.toolkit .toolkit-art-window img { width: 44px; height: 44px; }
+}
+@media(prefers-reduced-motion:reduce){.toolkit-particles i { animation: none; }}

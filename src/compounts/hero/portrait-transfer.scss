@@ -1,0 +1,4 @@
+.portrait-transfer{position:absolute;top:0;left:0;z-index:5;pointer-events:none;opacity:0;transform-origin:top left;isolation:isolate}
+.portrait-transfer img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1.6s cubic-bezier(.4,0,.2,1);mask-image:linear-gradient(#000 87%,transparent)}
+.portrait-transfer img.is-active{opacity:1}
+@media(prefers-reduced-motion:reduce){.portrait-transfer img{transition:none}.about-portrait{display:none}}

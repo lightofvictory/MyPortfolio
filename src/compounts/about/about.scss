@@ -1,0 +1,8 @@
+.about-introduction{min-width:0}
+.about-portrait{position:relative;width:min(100%,380px);aspect-ratio:1/1.08;margin:28px auto 0;transform-origin:center bottom;isolation:isolate}
+.about-portrait::before{content:'';position:absolute;inset:15%;border-radius:50%;background:#ed28551a;filter:blur(35px);z-index:-1}
+.about-portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1.6s cubic-bezier(.4,0,.2,1);mask-image:linear-gradient(#000 85%,transparent)}
+.about-portrait img.is-active{opacity:1}
+.about-grid>.about-copy{align-self:center}
+@media(max-width:640px){.about-portrait{width:min(100%,300px);margin-top:20px}}
+@media(prefers-reduced-motion:reduce){.about-portrait img{transition:none}}

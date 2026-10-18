@@ -1,0 +1,105 @@
+.journey{background:linear-gradient(135deg,#161016d9,#0e0d10ed);border-bottom:1px solid #ffffff12}
+.journey-heading{text-align:center;margin-bottom:60px}.journey-heading .eyebrow{justify-content:center;margin-bottom:15px}.journey-heading>p{font-size:13px;margin-top:15px;color:#b9a7b2}
+.journey-timeline{position:relative;margin:0;padding:0;list-style:none;display:grid;gap:65px}
+.journey-timeline::before{content:'';position:absolute;top:18px;bottom:20px;left:50%;width:1px;background:linear-gradient(#ed285580,#ed28554d 80%,transparent)}
+.journey-milestone{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:90px;min-height:190px}
+.journey-node{position:absolute;left:50%;top:0;translate:-50% 0;display:grid;place-items:center;width:35px;height:35px;border:1px solid #ed285580;background:#1d111a;border-radius:50%;color:#f46b91;box-shadow:0 0 0 7px #ed285506}
+.journey-content{grid-column:1;text-align:right;padding-top:3px;min-width:0}.journey-milestone:nth-child(even) .journey-content{grid-column:2;text-align:left}
+.journey-date{display:block;color:#f47a9a;font:10px/1.6 monospace;letter-spacing:1.3px;margin-bottom:17px}.journey-content h3{font-size:21px;letter-spacing:-.5px;line-height:1.4;margin-bottom:12px}.journey-content h3 a{display:inline-flex;gap:8px;align-items:center}.journey-content>p{font-size:13px;line-height:1.85;color:#b9a7b2}.journey-location{display:block;font-size:12px;color:#93838e;margin-top:5px}.journey-grade{display:inline-flex;gap:9px;align-items:center;margin-top:20px;padding:5px 12px;background:#ed28550d;border:1px solid #ed285530;border-radius:20px;font-size:10px;color:#c5a9b9}.journey-grade strong{color:#f9d4e1;font-weight:500}.journey-content .journey-role{color:#ddc6d3;margin-bottom:13px;font-size:12px}
+.journey-product{display:flex;align-items:flex-start;gap:13px;margin-top:24px;padding:18px;border:1px solid #ffffff14;border-radius:14px;background:#ffffff03}.journey-product-icon{display:grid;place-items:center;width:37px;height:37px;border-radius:11px;background:#ed285512;color:#f04470;flex-shrink:0}.journey-product-label{font:8px monospace;letter-spacing:1.3px;color:#aa8699}.journey-product h4{margin:4px 0;font-size:17px;font-weight:500;color:#f1e4eb}.journey-product p{font-size:11px;color:#b9a7b2}
+@media(max-width:640px){.journey-heading{margin-bottom:40px}.journey-heading>p{font-size:12px}.journey-timeline{gap:40px}.journey-timeline::before{left:17px}.journey-node{left:17px}.journey-milestone{display:block;min-height:0;padding-left:52px}.journey-content,.journey-milestone:nth-child(even) .journey-content{text-align:left}.journey-content h3{font-size:18px}.journey-date{font-size:9px}.journey-content>p{font-size:12px}.journey-product{padding:13px;gap:10px}.journey-product-label{font-size:7px;letter-spacing:.8px}}
+
+.journey{position:relative;isolation:isolate;overflow:hidden;background:#100e13}
+.journey>.container{position:relative;z-index:1}
+.journey-waves{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.65;mask-image:linear-gradient(180deg,transparent,#000 18%,#000 85%,transparent)}
+.journey-waves::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#100e1350,#100e1385 50%,#100e1340),linear-gradient(180deg,#100e1340,transparent 70%)}
+.journey-waves svg{width:100%;height:100%;min-height:700px}
+.journey-wave-lines{animation:journey-wave-flow 16s ease-in-out infinite alternate;transform-origin:center}
+.journey-wave-haze{opacity:.5;animation:journey-wave-flow 20s ease-in-out infinite alternate-reverse;transform-origin:center}
+.journey-wave-sparks circle{animation:journey-spark 5s ease-in-out infinite}
+.journey-content{text-shadow:0 2px 14px #100e13}
+@keyframes journey-wave-flow{from{transform:translate(-12px,12px) scale(1)}to{transform:translate(18px,-20px) scale(1.06)}}
+@keyframes journey-spark{0%,100%{opacity:.15}50%{opacity:.8}}
+@media(max-width:640px){.journey-waves{opacity:.4}.journey-waves svg{width:180%;max-width:none;transform:translateX(-30%)}}
+@media(prefers-reduced-motion:reduce){.journey-wave-lines,.journey-wave-haze,.journey-wave-sparks circle{animation:none}}
+
+/* Atmospheric waves stay behind the readable timeline. */
+.journey{background:radial-gradient(ellipse 60% 40% at 95% 78%,#57203b26,transparent 80%),radial-gradient(ellipse 65% 35% at 0% 35%,#40203d20,transparent 80%),#0d0d11}
+.journey-waves{inset:0;opacity:.42;mask-image:linear-gradient(180deg,transparent 4%,#000 35%,#000 80%,transparent)}
+.journey-waves::after{background:linear-gradient(180deg,#0d0d1180 0%,#0d0d1150 40%,transparent 80%),radial-gradient(ellipse at 50% 40%,#0d0d1190,transparent 75%)}
+.journey-waves svg{filter:drop-shadow(0 0 5px #ed285530)}
+.journey-wave-haze{opacity:.22}
+.journey-wave-lines{opacity:.6}
+.journey-wave-sparks{opacity:.4}
+.journey-timeline::before{background:#ffffff0d}
+.journey-line-fill{position:absolute;left:50%;top:18px;bottom:20px;width:1px;background:linear-gradient(#ed2855,#f693b2);transform-origin:top;box-shadow:0 0 12px #ed285560;pointer-events:none}
+.journey-milestone .journey-content{grid-column:1;text-align:right}
+.journey-milestone:nth-of-type(even) .journey-content{grid-column:2;text-align:left}
+.journey-node{background:#181119;box-shadow:0 0 0 7px #ed285506,0 0 25px #ed285512}
+.journey-product{background:linear-gradient(120deg,#ffffff05,#ed285505);border-color:#ffffff12}
+@media(max-width:640px){.journey-line-fill{left:17px}.journey-milestone .journey-content,.journey-milestone:nth-of-type(even) .journey-content{text-align:left}.journey-waves{opacity:.3}}
+
+.journey-timeline-wrap{position:relative}.journey-line-fill{z-index:1}.journey-timeline{z-index:2}
+
+/* Rose nebula and sparse shooting stars behind the journey. */
+.journey{background:#100b12}
+.journey-galaxy{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;background:radial-gradient(ellipse at 80% 15%,#32142845,transparent 60%),#100b12}
+.journey-galaxy::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#100b12ee,transparent 30%,#100b1233 70%,#100b12ee),linear-gradient(90deg,#100b1240,#100b1266 45%,#100b1240)}
+.galaxy-nebula{position:absolute;width:150%;height:38%;left:-25%;top:37%;border-radius:50%;filter:blur(30px);background:radial-gradient(ellipse at 60% 50%,#f080ad35,transparent 30%),radial-gradient(ellipse at 25% 50%,#ed285530,transparent 45%),radial-gradient(ellipse at 80% 50%,#80418325,transparent 45%);transform:rotate(-23deg);animation:nebula-breathe 18s ease-in-out infinite alternate}
+.galaxy-nebula-two{top:49%;height:16%;filter:blur(16px);opacity:.65;background:radial-gradient(ellipse at 50% 50%,#ec6dac40,transparent 55%);animation-delay:-9s}
+.galaxy-stars{position:absolute;inset:0;width:100%;height:100%;opacity:.6}.galaxy-stars circle{animation:galaxy-twinkle 6s ease-in-out infinite}
+.galaxy-meteors{position:absolute;inset:0;overflow:hidden;opacity:.5}
+.galaxy-meteor{position:absolute;width:130px;height:1px;background:linear-gradient(90deg,transparent,#f6a1c380,#fff0f7);box-shadow:0 0 5px #ed285530;transform:rotate(-28deg);opacity:0;animation:galaxy-shoot 12s linear infinite}
+.galaxy-meteor::after{content:'';position:absolute;right:0;top:-1px;width:3px;height:3px;border-radius:50%;background:#fff0f7;box-shadow:0 0 8px #f68aba}
+@keyframes galaxy-twinkle{0%,100%{opacity:.2}50%{opacity:.85}}
+@keyframes nebula-breathe{from{translate:-10px 15px;opacity:.6}to{translate:15px -15px;opacity:1}}
+@keyframes galaxy-shoot{0%,72%{opacity:0;translate:90px -50px}76%{opacity:.8}88%{opacity:0;translate:-350px 190px}100%{opacity:0;translate:-350px 190px}}
+@media(max-width:640px){.galaxy-stars{opacity:.4}.galaxy-nebula{opacity:.5}.galaxy-meteors{opacity:.3}}
+@media(prefers-reduced-motion:reduce){.galaxy-nebula,.galaxy-stars circle,.galaxy-meteor{animation:none}.galaxy-meteor{display:none}}
+
+/* Keep the star field legible through the atmospheric layers. */
+.galaxy-stars{opacity:1;filter:drop-shadow(0 0 2px #ffc4de80)}
+.journey-galaxy::after{background:linear-gradient(180deg,#100b12b3,transparent 22%,transparent 80%,#100b12c9)}
+.galaxy-meteors{opacity:.85}
+.galaxy-meteor{height:1.5px;width:160px;box-shadow:0 0 8px #f68aba60}
+@keyframes galaxy-twinkle{0%,100%{opacity:.5}50%{opacity:1}}
+@media(max-width:640px){.galaxy-stars{opacity:.9}.galaxy-meteors{opacity:.65}}
+
+/* Gently move the whole field while individual stars twinkle. */
+.galaxy-stars{
+  inset:-5%;
+  width:110%;
+  height:110%;
+  transform-origin:center;
+  animation:galaxy-star-drift 28s ease-in-out infinite alternate;
+}
+@keyframes galaxy-star-drift{
+  from{transform:translate3d(-1.5%,1.5%,0) scale(1) rotate(-.5deg)}
+  to{transform:translate3d(1.5%,-1.5%,0) scale(1.035) rotate(.5deg)}
+}
+@media(prefers-reduced-motion:reduce){.galaxy-stars{animation:none;transform:none}}
+
+/* Luminous central timeline and winding rose light. */
+.journey-timeline-wrap{isolation:isolate}
+.journey-timeline::before{width:2px;background:linear-gradient(#f0447033,#ffd1e455,#f0447022);box-shadow:0 0 9px #ed285530}
+.journey-line-fill{width:2px;background:linear-gradient(#ffd4e6,#ff588e 50%,#ffb9d7);box-shadow:0 0 8px #ff81ae,0 0 20px #ed285570}
+.journey-node{width:46px;height:46px;top:-6px;border:1px solid #ff8cb5;background:radial-gradient(circle at 40% 30%,#492036,#180f19 75%);color:#ff83af;box-shadow:0 0 0 5px #ed285509,0 0 12px #f0447080,0 0 30px #ed28554d,inset 0 0 14px #ed28551a}
+.journey-node svg{width:22px;height:22px;filter:drop-shadow(0 0 5px #ed285560)}
+.journey-timeline-orbit{position:absolute;top:5px;bottom:0;left:50%;translate:-50% 0;width:150px;pointer-events:none;z-index:0;mask-image:linear-gradient(transparent,#000 10%,#000 85%,transparent)}
+.journey-timeline-orbit svg{width:100%;height:100%;overflow:visible}
+.timeline-spiral-path{stroke:url(#timeline-spiral-light);stroke-width:1.6;stroke-dasharray:2000;filter:drop-shadow(0 0 5px #ff649e)}
+.timeline-spiral-glow{stroke:#ed2855;stroke-width:5;filter:blur(5px);opacity:.28}
+.journey-line-stars{position:absolute;top:0;bottom:15px;left:50%;width:2px;pointer-events:none;z-index:3}
+.journey-line-stars i{position:absolute;left:50%;translate:-50% 0;width:5px;height:5px;border-radius:50%;background:#ffe7f2;box-shadow:0 0 5px #fff,0 0 13px #ff5d98;animation:timeline-dot-glow 3s ease-in-out infinite}
+.journey-line-stars i:nth-child(1){top:12%}.journey-line-stars i:nth-child(2){top:35%;animation-delay:-1s}.journey-line-stars i:nth-child(3){top:67%;animation-delay:-2s}.journey-line-stars i:nth-child(4){top:95%;animation-delay:-1.5s}
+@keyframes timeline-dot-glow{50%{opacity:.55;scale:.8}}
+@media(max-width:640px){.journey-node{width:35px;height:35px;top:0}.journey-node svg{width:18px;height:18px}.journey-timeline-orbit{left:17px;width:65px;opacity:.7}.journey-line-stars{left:17px}}
+@media(prefers-reduced-motion:reduce){.journey-line-stars i{animation:none}}
+
+/* Light travels around the spiral without moving the milestones. */
+.timeline-spiral-flow{stroke:#ffb6d4;stroke-width:2;stroke-linecap:round;stroke-dasharray:5 95;filter:drop-shadow(0 0 5px #ff4d96);animation:timeline-energy-flow 9s linear infinite}
+.timeline-orbit-particle{filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 9px #ff4d96)}
+.timeline-spiral-glow{animation:timeline-spiral-breathe 4s ease-in-out infinite}
+@keyframes timeline-energy-flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
+@keyframes timeline-spiral-breathe{0%,100%{opacity:.2}50%{opacity:.48}}
+@media(prefers-reduced-motion:reduce){.timeline-spiral-flow,.timeline-spiral-glow{animation:none}.timeline-spiral-flow,.timeline-orbit-particle{display:none}}
