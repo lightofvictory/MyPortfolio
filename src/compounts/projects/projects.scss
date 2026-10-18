@@ -1,0 +1,9 @@
+.projects-viewport{min-width:0}
+.projects.is-horizontal{overflow:hidden}
+.projects.is-horizontal .projects-viewport{overflow:hidden}
+.projects.is-horizontal .project-grid{display:flex;gap:26px;width:100%;will-change:transform}
+.projects.is-horizontal .project-card{flex:0 0 70%;min-width:0}
+@media(max-width:640px){.projects-viewport{overflow:hidden}}
+@media(prefers-reduced-motion:reduce){.project-grid{will-change:auto}}
+
+.projects-heading{position:relative;z-index:2;opacity:1;visibility:visible;transform:none}
