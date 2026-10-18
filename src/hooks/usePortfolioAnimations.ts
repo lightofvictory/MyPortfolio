@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { cancelStartupSound, playSound, unlockAudio } from '../services/preferences';
+import { cancelStartupSound, playSound, unlockAudio } from '../shared/services/preferences';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
