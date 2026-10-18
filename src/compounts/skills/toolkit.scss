@@ -75,3 +75,48 @@
   .toolkit-info-text>p { font-size: 11px; line-height: 1.65; margin-bottom: 12px; }.toolkit-info-category { font-size: 8px; }.toolkit-info-heading h3 { font-size: 23px; }.toolkit-feature-tags span { font-size: 8px; padding: 5px 8px; }.toolkit-illustration { width: 220px; height: 145px; justify-self: center; }.toolkit-art-window { height: 80%; top: 12%; }.toolkit-art-tile { width: 32px; height: 36px; }.toolkit-art-tile svg { width: 18px; }.toolkit .toolkit-art-window .technology-logo,.toolkit .toolkit-art-window img { width: 44px; height: 44px; }
 }
 @media(prefers-reduced-motion:reduce){.toolkit-particles i { animation: none; }}
+
+/* Light appearance for the carousel and its illustrated detail cards. */
+:root[data-theme='light'] {
+  .toolkit {
+    background: radial-gradient(ellipse at 100% 0%, #f8cfdf80, transparent 45%), radial-gradient(ellipse at 0% 0%, #fce1ed80, transparent 40%), #fff8fa;
+    border-color: var(--theme-border);
+  }
+  .toolkit .toolkit-heading h2,
+  .toolkit-active-copy h3,
+  .toolkit-info-heading h3 { color: #271c24; }
+  .toolkit .toolkit-heading .eyebrow { color: #684357; }
+  .toolkit .toolkit-heading>p,
+  .toolkit-active-copy p,
+  .toolkit-info-text>p { color: #594653; }
+  .toolkit-tech {
+    background: linear-gradient(125deg, #ffe5ef, #fffafb 65%, #fce8f1);
+    border-color: #c947793d;
+    color: #271c24;
+    box-shadow: inset 0 1px 5px #fff, 0 5px 15px #4323360d;
+  }
+  .toolkit-tech.is-active {
+    background: radial-gradient(ellipse at center, #fff, #ffe8f1);
+    border-color: #ce356d;
+    box-shadow: 0 0 0 1px #ed285560, 0 0 20px #ed285526;
+  }
+  .toolkit .technology-logo-fallback { color: #563447; }
+  .toolkit .toolkit-tech .technology-logo { filter: none; }
+  .toolkit-arrow { background: #fffafaf2; color: #bd1d50; border-color: #d55382; box-shadow: 0 0 15px #ed285514; }
+  .toolkit-arrow:hover { background: #fce0eb; color: #94143d; }
+  .toolkit-category { background: linear-gradient(#ffe6ef, #f8ccdd); color: #8e2449; border-color: #ce356d50; }
+  .toolkit-info-card {
+    background: radial-gradient(ellipse at 0% 0%, #f8ccdd60, transparent 45%), linear-gradient(120deg, #fff3f8, #fffafb 60%, #fce8f1);
+    border-color: #ce356d50;
+    box-shadow: 0 5px 20px #4323360a;
+  }
+  .toolkit-info-card.is-active { border-color: #d55382; box-shadow: 0 0 20px #ed28551a; }
+  .toolkit-info-logo { background: #fffafb; border-color: #d5538250; box-shadow: inset 0 0 10px #ed285508; }
+  .toolkit-info-category { color: #bd1d50; }
+  .toolkit-feature-tags span { background: linear-gradient(#fffafb, #fce8f1); color: #563447; border-color: #ce356d30; }
+  .toolkit-art-window { background: linear-gradient(140deg, #f6c8dc, #fffafb 55%); border-color: #d5538280; }
+  .toolkit-art-window.front { background: linear-gradient(130deg, #ffe1ed, #fffafb); }
+  .toolkit-art-tile { background: linear-gradient(120deg, #f8ccdd, #fffafb); color: #bd1d50; border-color: #ce356d50; }
+  .toolkit-art-orbit::after { background: #ce356d; box-shadow: 0 0 9px #ed285540; }
+  .toolkit-autoplay { color: #684357; }
+}

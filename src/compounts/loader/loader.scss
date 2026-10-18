@@ -1,0 +1,30 @@
+.loader.portfolio-loader{background:radial-gradient(ellipse at 15% 50%,#55112640,transparent 55%),radial-gradient(ellipse at 100% 0%,#3a112644,transparent 50%),#0d0b0f;color:#f7f0f5;overflow:hidden}
+.portfolio-loader .loader-inner{width:min(1320px,calc(100% - 100px));height:100svh;padding:30px 0 25px;display:flex;flex-direction:column;position:relative;z-index:1}
+.loader-noise{position:absolute;inset:0;opacity:.13;background-image:radial-gradient(#f292b780 .5px,transparent .5px);background-size:7px 7px;mask-image:radial-gradient(ellipse at 30% 50%,#000,transparent 65%);pointer-events:none}
+.portfolio-loader .loader-top{display:flex;align-items:center;justify-content:space-between;gap:20px;font:9px monospace;letter-spacing:2px;color:#ad8d9f}
+.loader-brand{font:bold 37px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-3px;color:#fff}.loader-brand>span{color:#ed2855}
+.loader-online{display:flex;align-items:center;gap:9px;font-size:8px}.loader-online i{width:5px;height:5px;border-radius:50%;background:#f04470;box-shadow:0 0 10px #ed2855}
+.loader-main{flex:1;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:6%;align-items:center;padding:28px 0}
+.loader-orbital-art{position:relative;width:min(100%,440px);aspect-ratio:1;justify-self:center;isolation:isolate}
+.loader-ambient{position:absolute;inset:22%;border-radius:50%;background:#ed28551f;filter:blur(50px);z-index:-1}
+.loader-orbits-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.loader-ring-guide{stroke:#ed285524;stroke-width:.6}.loader-ring-spin{stroke:url(#loader-ring-light);stroke-width:1.4;stroke-dasharray:700 413;transform-origin:220px 220px;animation:loader-orbit-spin 12s linear infinite;filter:drop-shadow(0 0 4px #ed285560)}
+.loader-orbit-ellipse{stroke:#f0447050;stroke-width:.65}.loader-orbit-ellipse.second{stroke:#ef8bbc2a}
+.loader-core{position:absolute;inset:29%;border:1px solid #f48eb12b;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:radial-gradient(circle at 35% 20%,#46203288,#140e1666 70%);box-shadow:inset 0 1px 20px #ed285512,0 0 50px #ed285508;backdrop-filter:blur(10px)}
+.loader-core>span:first-child{font:700 73px/1 'Plus Jakarta Sans',sans-serif;letter-spacing:-7px;color:#fff1f6}.loader-core>span:first-child>span{color:#f04470}
+.loader-core-caption{font:5px monospace;letter-spacing:1.3px;color:#c097ad}
+.loader-code-tile{position:absolute;display:grid;place-items:center;width:54px;height:54px;border-radius:15px;border:1px solid #e8588d3b;background:linear-gradient(140deg,#422034,#171119);box-shadow:0 10px 30px #0003;color:#fa6797;animation:loader-tile-float 5s ease-in-out infinite}
+.loader-code-tile.tile-one{left:7%;top:23%;rotate:-12deg}.loader-code-tile.tile-two{right:5%;top:43%;rotate:10deg;animation-delay:-1.7s}.loader-code-tile.tile-three{left:32%;bottom:5%;rotate:-7deg;animation-delay:-3.3s}
+.loader-kicker{display:flex;gap:10px;align-items:center;font:8px monospace;letter-spacing:2px;color:#c296ae;margin-bottom:23px}.loader-kicker>span{width:20px;height:1px;background:#ed2855}
+.loader-title-mask{overflow:hidden}.portfolio-loader .loader-name{font:600 clamp(38px,5.3vw,76px)/1.08 'Plus Jakarta Sans',sans-serif;letter-spacing:-3.5px;color:#f9f1f6;display:block}.portfolio-loader .loader-name>span{background:linear-gradient(110deg,#ffbbd7,#f04470 70%,#f45b94);background-clip:text;-webkit-background-clip:text;color:transparent}
+.loader-message>p{margin-top:23px;font-size:12px;line-height:1.9;color:#aa929f}
+.portfolio-loader .loader-bottom{display:flex;align-items:flex-end;justify-content:space-between;border-top:0;padding:0 0 20px;letter-spacing:normal;color:#b29aaa}
+.loader-status{display:flex;flex-direction:column;gap:9px}.loader-status-label{font:8px monospace;letter-spacing:2px;color:#856b7b}.loader-status>[data-loader-status]{font-size:12px;color:#d8bdcd}
+.loader-percentage{display:flex;align-items:baseline;gap:6px}.portfolio-loader .loader-count{font:300 clamp(48px,6vw,80px)/1 Inter,sans-serif;letter-spacing:-4px;font-variant-numeric:tabular-nums;color:#fff0f7}.loader-percentage>span:last-child{font:12px monospace;color:#f04470}
+.portfolio-loader .loader-track{height:2px;background:#ffffff0c;margin:0;overflow:visible}.portfolio-loader .loader-track>div{background:linear-gradient(90deg,#7a2246,#f04470,#ffb5d4);box-shadow:0 0 12px #ed28554d;transition:none;transform:scaleX(0);transform-origin:left}
+.loader-footnote{display:flex;justify-content:space-between;gap:15px;padding-top:18px;font:7px monospace;letter-spacing:1.6px;color:#806776}.loader-footnote>span:last-child{display:flex;align-items:center;gap:8px}
+@keyframes loader-orbit-spin{to{transform:rotate(360deg)}}@keyframes loader-tile-float{50%{translate:0 -8px}}
+@media(max-width:760px){.portfolio-loader .loader-inner{width:calc(100% - 44px);padding:24px 0}.loader-online{display:none}.loader-main{grid-template-columns:1fr;gap:8px;padding:12px 0 24px;align-content:center}.loader-orbital-art{width:min(70vw,280px)}.loader-message{text-align:center}.loader-kicker{justify-content:center;font-size:6px;letter-spacing:1.5px;margin-bottom:12px}.portfolio-loader .loader-name{font-size:clamp(35px,8vw,56px);letter-spacing:-2px}.loader-message>p{font-size:10px;margin-top:12px}.loader-core>span:first-child{font-size:48px;letter-spacing:-4px}.loader-core-caption{font-size:3.5px;letter-spacing:.5px}.loader-code-tile{width:38px;height:38px;border-radius:11px}.loader-code-tile svg{width:19px}.loader-footnote{font-size:6px;letter-spacing:1px}.loader-footnote>span:last-child{max-width:160px;line-height:1.6;text-align:right}.portfolio-loader .loader-top{font-size:7px;letter-spacing:1.2px}.loader-status-label{font-size:7px}.loader-status>[data-loader-status]{font-size:10px}}
+@media(max-height:650px) and (max-width:760px){.loader-orbital-art{width:170px}.loader-message>p{display:none}.loader-main{gap:4px;padding:8px 0 15px}.loader-brand{font-size:28px}.portfolio-loader .loader-name{font-size:34px}}
+@media(prefers-reduced-motion:reduce){.loader.portfolio-loader{display:none}.loader-ring-spin,.loader-code-tile{animation:none}}
+

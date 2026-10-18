@@ -1,10 +1,26 @@
-.projects-viewport{min-width:0}
-.projects.is-horizontal{overflow:hidden}
-.projects.is-horizontal .projects-viewport{overflow:hidden}
-.projects.is-horizontal .project-grid{display:flex;gap:26px;width:100%;will-change:transform}
-.projects.is-horizontal .project-card{flex:0 0 70%;min-width:0}
-@media(max-width:640px){.projects-viewport{overflow:hidden}}
-@media(prefers-reduced-motion:reduce){.project-grid{will-change:auto}}
+.projects-viewport {
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 2px;
+  padding: 4px 2px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: #c83260 #ed285512;
+}
+.projects .project-grid {
+  display: flex;
+  gap: 26px;
+}
+.projects .project-card {
+  flex: 0 0 70%;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+@media (max-width: 640px) {
+  .projects .project-grid { gap: 18px; }
+  .projects .project-card { flex-basis: 92%; }
+}
 
 .projects-heading{position:relative;z-index:2;opacity:1;visibility:visible;transform:none}
 
@@ -19,3 +35,7 @@
 .linked-project-art>span{position:absolute;inset:0;border:1px solid currentColor;border-radius:50%;opacity:.25}.linked-project-art>span:last-child{inset:-18px;opacity:.12}
 .stonescape .linked-project-art{transform:rotate(8deg)}.stonescape .linked-project-art>span{border-radius:24%}
 @media(max-width:640px){.linked-project-preview{padding:24px}.linked-project-preview h3{font-size:36px}.linked-project-art{right:0;opacity:.35}.linked-project-caption{left:24px}}
+
+.projects.is-horizontal { overflow: hidden; }
+.projects.is-horizontal .projects-viewport { overflow: hidden; }
+.projects.is-horizontal .project-grid { will-change: transform; }

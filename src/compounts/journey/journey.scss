@@ -103,3 +103,42 @@
 @keyframes timeline-energy-flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
 @keyframes timeline-spiral-breathe{0%,100%{opacity:.2}50%{opacity:.48}}
 @media(prefers-reduced-motion:reduce){.timeline-spiral-flow,.timeline-spiral-glow{animation:none}.timeline-spiral-flow,.timeline-orbit-particle{display:none}}
+
+/* Keep the atmospheric timeline consistent with the selected appearance. */
+:root[data-theme='light'] {
+  .journey {
+    background: #fff8fa;
+    border-color: var(--theme-border);
+  }
+  .journey-galaxy {
+    background: radial-gradient(ellipse at 80% 15%, #f5c9df70, transparent 60%), #fff8fa;
+  }
+  .journey-galaxy::after {
+    background: linear-gradient(180deg, #fff8fae6, transparent 22%, transparent 80%, #fff8fae6);
+  }
+  .galaxy-stars { opacity: .45; filter: none; }
+  .galaxy-stars circle { fill: #b34575; }
+  .galaxy-meteor { background: linear-gradient(90deg, transparent, #d3457b80, #ad285e); }
+  .galaxy-meteor::after { background: #ad285e; box-shadow: 0 0 8px #d3457b60; }
+  .journey-content { color: #271c24; text-shadow: none; }
+  .journey-heading h2, .journey-content h3 { color: #271c24; }
+  .journey-heading>p, .journey-content>p, .journey-product p { color: #594653; }
+  .journey-location, .journey-product-label { color: #684357; }
+  .journey-date { color: #bd1d50; }
+  .journey-content .journey-role { color: #563447; }
+  .journey-grade { color: #594653; background: #ed285508; }
+  .journey-grade strong { color: #8e2449; }
+  .journey-product { background: #fffafacc; border-color: #43233620; }
+  .journey-product h4 { color: #271c24; }
+  .journey-node {
+    background: radial-gradient(circle at 40% 30%, #ffe1ee, #fff8fa 75%);
+    color: #bd1d50;
+    border-color: #df628b;
+    box-shadow: 0 0 0 5px #ed285509, 0 0 20px #ed28551a;
+  }
+  .journey-node svg { filter: none; }
+  .journey-line-fill { background: linear-gradient(#d62a61, #ed2855 50%, #dd6a97); box-shadow: 0 0 10px #ed285530; }
+  .journey-line-stars i { background: #bd1d50; box-shadow: 0 0 8px #ed285560; }
+  .timeline-spiral-flow { stroke: #ce356d; filter: drop-shadow(0 0 3px #ed285540); }
+  .timeline-orbit-particle { fill: #bd1d50; filter: drop-shadow(0 0 4px #ed285560); }
+}

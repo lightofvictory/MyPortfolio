@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ArrowUpRight, Braces, Fingerprint, Linkedin, Mail, Menu, MessagesSquare, PanelsTopLeft, X } from 'lucide-react';
+import Settings from '../settings/Settings';
 import { profile } from '../../data/profile';
 
 const navigationItems = [
@@ -37,6 +38,7 @@ export default function Header({
         ))}
       </nav>
       <div className="nav-actions">
+        <Settings />
         <a className="nav-social" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={21} /></a>
         <a className="nav-social" href={`mailto:${profile.email}`} aria-label="Email Jayaprakash"><Mail size={22} /></a>
       <a className="resume-link" href="/resume.html" target="_blank" rel="noreferrer">Resume <ArrowUpRight size={15} />

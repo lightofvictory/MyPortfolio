@@ -198,3 +198,22 @@
 .technology-logo img{display:block;width:20px;height:20px;object-fit:contain}
 .technology-logo-light img{filter:brightness(0) invert(1)}
 .technology-logo-fallback{font:600 9px monospace;color:#d7b9c8;text-transform:uppercase}
+
+.typing-sound-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 12px;
+  border: 1px solid #ffffff25;
+  border-radius: 20px;
+  background: #ffffff08;
+  color: #d5c5ce;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.typing-sound-toggle:hover,
+.typing-sound-toggle[aria-pressed='true'] { color: #f68aa7; border-color: #f68aa780; }
+.typing-sound-toggle:focus-visible { outline: 2px solid #f68aa7; outline-offset: 4px; }

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
+import { cancelStartupSound, playSound, unlockAudio } from '../services/preferences';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import 'lenis/dist/lenis.css';
@@ -52,15 +53,32 @@ export function usePortfolioAnimations() {
       const previousOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
       lenis?.stop();
+      let startupPlayed = playSound('loading') === true;
+      const enableLoadingAudio = () => { unlockAudio(); };
+      window.addEventListener('pointerdown', enableLoadingAudio);
+      window.addEventListener('keydown', enableLoadingAudio);
+      unlockAudio();
+      cleanups.push(() => {
+        cancelStartupSound();
+        window.removeEventListener('pointerdown', enableLoadingAudio);
+        window.removeEventListener('keydown', enableLoadingAudio);
+      });
       const value = { percent: 0 };
       const timeline = gsap.timeline();
       timeline.fromTo('.loader-name', { yPercent: 110 }, { yPercent: 0, duration: 0.7, ease: 'power3.out' })
         .to(value, { percent: 100, duration: 3.2, ease: 'power2.inOut', onUpdate: () => {
-          if (counter.current) counter.current.textContent = String(Math.round(value.percent));
+          if (!startupPlayed) startupPlayed = playSound('loading') === true;
+          if (counter.current) counter.current.textContent = String(Math.round(value.percent)).padStart(2, '0');
+          const status = loader.current?.querySelector('[data-loader-status]');
+          if (status) status.textContent = value.percent < 30 ? 'Setting the scene' : value.percent < 65 ? 'Connecting the details' : value.percent < 95 ? 'Bringing it all together' : 'Welcome. Let’s explore.';
           if (progress.current) progress.current.style.transform = `scaleX(${value.percent / 100})`;
         } }, 0.2)
         .to('.loader-inner', { y: -35, opacity: 0, duration: 0.45 }, '+=0.15')
         .to(loader.current, { yPercent: -100, duration: 0.85, ease: 'power4.inOut', onComplete: () => {
+          cancelStartupSound();
+          playSound('ready');
+          window.removeEventListener('pointerdown', enableLoadingAudio);
+          window.removeEventListener('keydown', enableLoadingAudio);
           gsap.set(loader.current, { display: 'none' });
           document.body.style.overflow = previousOverflow;
           lenis?.start();

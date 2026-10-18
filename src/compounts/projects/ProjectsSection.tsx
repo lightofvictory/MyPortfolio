@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './projects.scss';
 import { ArrowUpRight } from 'lucide-react';
 import LinkedProjectCards from './LinkedProjectCard';
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectsSection() {
@@ -14,11 +15,10 @@ export default function ProjectsSection() {
       const section = root.current;
       const track = section?.querySelector<HTMLElement>('.project-grid');
       const viewport = section?.querySelector<HTMLElement>('.projects-viewport');
-      if (!section || !track || !viewport || track.querySelectorAll('.project-card').length < 2) return;
+      if (!section || !track || !viewport) return;
       section.classList.add('is-horizontal');
       const travel = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
       const context = gsap.context(() => {
-        gsap.set('.projects-heading', { autoAlpha: 1, x: 0, y: 0 });
         gsap.fromTo(track, { x: () => -travel() }, {
           x: 0,
           ease: 'none',
@@ -45,9 +45,9 @@ export default function ProjectsSection() {
           <h2>Ideas brought to life<span>.</span>
           </h2>
         </div>
-        <span className="section-note">A selection of personal projects ↙</span>
+        <span className="section-note">Scroll to explore projects →</span>
       </div>
-      <div className="projects-viewport"><div className="project-grid">
+      <div className="projects-viewport" tabIndex={0} role="region" aria-label="Projects — scroll horizontally to explore"><div className="project-grid">
         <article className="project-card">
           <a className="project-preview" href="https://chipper-cactus-08f27d.netlify.app/" target="_blank" rel="noreferrer" aria-label="Visit real estate website">
             <div className="browser-bar">
