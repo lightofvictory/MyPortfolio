@@ -1,8 +1,45 @@
-import { ArrowUpRight, CodeXml } from 'lucide-react';
+import { useLayoutEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import './projects.scss';
+import { ArrowUpRight } from 'lucide-react';
+import LinkedProjectCards from './LinkedProjectCard';
+gsap.registerPlugin(ScrollTrigger);
+
 export default function ProjectsSection() {
-  return <section id="projects" className="projects section">
+  const root = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    const media = gsap.matchMedia();
+    media.add('(min-width: 641px) and (prefers-reduced-motion: no-preference)', () => {
+      const section = root.current;
+      const track = section?.querySelector<HTMLElement>('.project-grid');
+      const viewport = section?.querySelector<HTMLElement>('.projects-viewport');
+      if (!section || !track || !viewport || track.querySelectorAll('.project-card').length < 2) return;
+      section.classList.add('is-horizontal');
+      const travel = () => Math.max(0, track.scrollWidth - viewport.clientWidth);
+      const context = gsap.context(() => {
+        gsap.set('.projects-heading', { autoAlpha: 1, x: 0, y: 0 });
+        gsap.fromTo(track, { x: () => -travel() }, {
+          x: 0,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: () => `top ${Math.ceil((document.querySelector('.header')?.getBoundingClientRect().bottom ?? 80) + 12)}px`,
+            end: () => `+=${Math.max(travel() * 2, window.innerHeight)}`,
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+          },
+        });
+      }, section);
+      return () => { context.revert(); section.classList.remove('is-horizontal'); };
+    });
+    return () => media.revert();
+  }, []);
+  return <section ref={root} id="projects" className="projects section">
     <div className="container">
-      <div className="section-heading" data-reveal={true}>
+      <div className="section-heading projects-heading">
         <div>
           <div className="eyebrow">03 — SELECTED WORK</div>
           <h2>Ideas brought to life<span>.</span>
@@ -10,8 +47,8 @@ export default function ProjectsSection() {
         </div>
         <span className="section-note">A selection of personal projects ↙</span>
       </div>
-      <div className="project-grid">
-        <article className="project-card" data-reveal={true}>
+      <div className="projects-viewport"><div className="project-grid">
+        <article className="project-card">
           <a className="project-preview" href="https://chipper-cactus-08f27d.netlify.app/" target="_blank" rel="noreferrer" aria-label="Visit real estate website">
             <div className="browser-bar">
               <span>● ● ●</span>
@@ -63,46 +100,8 @@ export default function ProjectsSection() {
             </div>
           </div>
         </article>
-        <article className="project-card" data-reveal={true}>
-          <div className="portfolio-preview">
-            <div className="browser-bar">
-              <span>● ● ●</span>
-              <span>jayaprakash / portfolio</span>
-              <CodeXml size={14} />
-            </div>
-            <div className="mini-portfolio">
-              <b>jp<span>.</span>
-              </b>
-              <div className="mini-content">
-                <div>
-                  <small>FULL-STACK DEVELOPER</small>
-                  <h3>Thoughtful code.<br />Meaningful<br />
-                    <span>digital experiences.</span>
-                  </h3>
-                  <span className="mini-button">Explore my work ↗</span>
-                </div>
-                <img src="/images/jayaprakash.png" alt="Portrait in Jayaprakash’s portfolio preview" loading="lazy" />
-              </div>
-            </div>
-          </div>
-          <div className="project-info">
-            <div className="project-title">
-              <h3>Personal Portfolio</h3>
-              <CodeXml size={20} />
-            </div>
-            <p>A little corner of the internet for my work, built with thoughtful typography and subtle scroll interactions.</p>
-            <div className="project-footer">
-              <div className="tags">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>GSAP</span>
-              </div>
-              <span className="you-are-here">You’re here <span>↗</span>
-              </span>
-            </div>
-          </div>
-        </article>
-      </div>
+        <LinkedProjectCards />
+      </div></div>
     </div>
   </section>;
 }
